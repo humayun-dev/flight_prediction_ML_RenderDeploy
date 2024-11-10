@@ -10,7 +10,10 @@ COPY . /app
 # Install dependencies
 RUN pip install -r requirements.txt
 
-# Set environment variables
+# Install gunicorn explicitly
+RUN pip install gunicorn
+
+# Environment variables
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=production
 
